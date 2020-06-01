@@ -1,4 +1,8 @@
-# newapp
+# Bottom NavBar in Flutter
+
+
+
+<img src = "preview/preview.jpg" alt="BottomNavBar" height = "500" >
 
 A new Flutter application.
 
