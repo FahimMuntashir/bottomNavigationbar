@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,14 +17,34 @@ class MyApp extends StatelessWidget {
           title: Center(child: Text('BottomNavBar')),
         ),
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.add), title: Text('First')),
+              backgroundColor: Colors.red,
+              icon: Icon(Icons.home),
+              title: Text('First'),
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle), title: Text('Second')),
+              backgroundColor: Colors.blue,
+              icon: Icon(Icons.account_circle),
+              title: Text('Second'),
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle), title: Text('Third')),
+              backgroundColor: Colors.yellow,
+              icon: Icon(Icons.account_circle),
+              title: Text('Third'),
+            ),
+            BottomNavigationBarItem(
+              backgroundColor: Colors.green,
+              icon: Icon(Icons.account_circle),
+              title: Text('Fourth'),
+            ),
           ],
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
         ),
       ),
     );
